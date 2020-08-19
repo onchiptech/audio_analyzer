@@ -35,7 +35,7 @@ class AudioAnalyzer:
             input_sr: the sample rate of the input audio file. Defaults to 41000
         """
         
-        if isinstance(filename, int):
+        if isinstance(filename, str):
             y, sr = librosa.load(filename, sr=input_sr)
         else:
             y = filename
