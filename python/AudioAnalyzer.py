@@ -39,6 +39,7 @@ class AudioAnalyzer:
             y, sr = librosa.load(filename, sr=input_sr)
         else:
             y = filename
+            sr = input_sr
             
         self.y = y
         self.sr = sr
