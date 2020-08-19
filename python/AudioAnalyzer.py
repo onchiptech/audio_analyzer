@@ -34,7 +34,12 @@ class AudioAnalyzer:
             fft_size: The number of frequency bins for the fft analysis. Defaults to 256
             input_sr: the sample rate of the input audio file. Defaults to 41000
         """
-        y, sr = librosa.load(filename, sr=input_sr)
+        
+        if isinstance(filename, int):
+            y, sr = librosa.load(filename, sr=input_sr)
+        else:
+            y = filename
+            
         self.y = y
         self.sr = sr
         self.fft_size = fft_size
